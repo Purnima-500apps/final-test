@@ -92,9 +92,7 @@
       
     </div>
 
-    
-
-    <CollectionsAdd :addModal="addModal" />
+    <CollectionsAdd :addModal="addModal" @addData="addData"/>
   </div>
 </template>
 
@@ -107,5 +105,9 @@ const openModal = () => {
   addModal.value = true;
 } 
 
+const addData=(details:any)=>{
+
+      localStorage.setItem("employeeData", JSON.stringify(details));
+    }
 
 </script>
